@@ -1,1 +1,7 @@
+- if current_user
+  = render 'new', feeling: @feeling
+
+- @feelings.each do |feeling|
+  h2= feeling.mood
+  p= feeling.user.username
 
