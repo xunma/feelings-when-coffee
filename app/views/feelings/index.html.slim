@@ -2,6 +2,4 @@
   = render 'new', feeling: @feeling
 
 - @feelings.each do |feeling|
-  h2= feeling.mood
-  p= feeling.user.username
-
+  = render './shared/feelings/card', feeling: feeling
