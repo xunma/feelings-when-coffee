@@ -8,6 +8,10 @@ class FeelingsController < ApplicationController
     @feeling = Feeling.new
   end
 
+  def new
+    @feeling = Feeling.new
+  end
+
   def create
     @feeling = Feeling.new(feeling_params)
     @feeling.user = current_user
