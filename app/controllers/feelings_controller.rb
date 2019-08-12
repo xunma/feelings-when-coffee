@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class FeelingsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @feelings = Feeling.all
     @feeling = Feeling.new
@@ -12,7 +14,6 @@ class FeelingsController < ApplicationController
     if @feeling.save
       redirect_to feelings_path
     else
-      raise
       redirect_to feelings_path
       #TODO: puts error message
     end
