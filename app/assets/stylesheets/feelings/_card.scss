@@ -1,3 +1,5 @@
+@import './variable/color';
+
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -11,7 +13,7 @@
   text-align: center;
 
   td {
-    border: 1px solid black;
+    border: 1px solid $blonde;
   }
 }
 
