@@ -1,19 +1,25 @@
+- space = "  "
 .card-box
   table
     tr
       td.long-column rowspan="3"
         .vertical-text
-          h1= feeling.user.username
+          h2= feeling.user.username
       td colspan="3"
         p= "\"#{feeling.mood}\""
         = "-#{feeling.date}"
     tr
       td
-        = feeling.drink
+        i.fas.fa-mug-hot
+
+        = space + feeling.drink
       td
-        = feeling.music
+        i.fas.fa-music
+        = space + feeling.music
       td
-        = feeling.coffee_shop
+        i.fas.fa-store-alt
+        = space + feeling.coffee_shop
     tr
       td colspan="3"
-        = feeling.wifi_password
+        i.fas.fa-wifi
+        = space + feeling.wifi_password
