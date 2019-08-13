@@ -2,5 +2,5 @@
   = render 'new', feeling: @feeling
 
 .cards-container
-  - @feelings.each do |feeling|
+  - @feelings.reverse.each do |feeling|
     = render './shared/feelings/card', feeling: feeling

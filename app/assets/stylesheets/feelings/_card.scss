@@ -1,3 +1,4 @@
+@import "./variable/color";
 
 .vertical-text {
   writing-mode: vertical-rl;
@@ -11,9 +12,10 @@
   min-height: 400px;
   border-collapse: collapse;
   text-align: center;
+  // background-color: #F8F6F4;
 
   td {
-    border: 1px solid #817F75;
+    border: 1px solid $trolley-grey;
   }
 }
 
@@ -26,4 +28,17 @@
     font-weight: 700;
     font-size: 30px;
   }
+}
+
+.form table {
+
+  td {
+    border: 1px solid #B3B5BB;
+  }
+
+  input {
+    font-size: 20px;
+    width: 100%;
+  }
+
 }
