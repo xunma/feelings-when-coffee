@@ -1,5 +1,6 @@
 - if current_user
   = render 'new', feeling: @feeling
 
-- @feelings.each do |feeling|
-  = render './shared/feelings/card', feeling: feeling
+.cards-container
+  - @feelings.each do |feeling|
+    = render './shared/feelings/card', feeling: feeling

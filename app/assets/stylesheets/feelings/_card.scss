@@ -1,0 +1,27 @@
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.card-box table {
+  margin: 10px 0px;
+  width: 100%;
+  min-height: 400px;
+  border-collapse: collapse;
+  text-align: center;
+
+  td {
+    border: 1px solid black;
+  }
+}
+
+.long-column{
+  width: 15%;
+}
+
+.card-box {
+  p {
+    font-weight: 700;
+    font-size: 30px;
+  }
+}

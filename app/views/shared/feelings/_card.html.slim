@@ -1,2 +1,19 @@
-h2= feeling.mood
-p= feeling.user.username
+.card-box
+  table
+    tr
+      td.long-column rowspan="3"
+        .vertical-text
+          h1= feeling.user.username
+      td colspan="3"
+        p= "\"#{feeling.mood}\""
+        = "-#{feeling.date}"
+    tr
+      td
+        = feeling.drink
+      td
+        = feeling.music
+      td
+        = feeling.coffee_shop
+    tr
+      td colspan="3"
+        = feeling.wifi_password
