@@ -2,5 +2,8 @@
 /   = render 'new', feeling: @feeling
 
 .cards-container
-  - @feelings.reverse.each do |feeling|
-    = render './shared/feelings/card', feeling: feeling
+  - if @feelings.count == 0
+    p Rita, there is no feeling yet. So please create the first one.
+  - else
+    - @feelings.reverse.each do |feeling|
+      = render './shared/feelings/card', feeling: feeling
