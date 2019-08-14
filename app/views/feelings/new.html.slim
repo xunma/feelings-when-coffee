@@ -1,11 +1,12 @@
 h2= "You have arrived at the creating feeling page. Help yourself. If you have any question #{current_user.username}, don't ask Amy."
 .card-box.form
-  table
-    = form_for @feeling do |f|
+  = form_for @feeling do |f|
+    table
       tr
         td
           / = f.label :mood
           = f.text_field :mood, placeholder: "So, what is this moment like?"
+      tr
         td
           / = f.label :drink
           = f.text_field :drink, placeholder: "what are you drinking #{current_user.username}?"
@@ -14,6 +15,7 @@ h2= "You have arrived at the creating feeling page. Help yourself. If you have a
           / i.fas.fa-music
           / = f.label :music
           = f.text_field :music, placeholder: "what music?"
+      tr
         td
           / i.fas.fa-store-alt
           / = f.label :coffee_shop
@@ -23,8 +25,7 @@ h2= "You have arrived at the creating feeling page. Help yourself. If you have a
           / i.fas.fa-wifi
           / = f.label :wifi_password
           = f.text_field :wifi_password, placeholder: "do they have interesting password?"
-        td
-          = f.submit "click here to create this piece of feeling⭐️"
+    = f.submit "click here to create this piece of feeling⭐️"
 
 
   / = f.label :mood
