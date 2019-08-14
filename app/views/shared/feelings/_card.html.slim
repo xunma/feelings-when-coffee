@@ -7,7 +7,7 @@
           h2= feeling.user.username
       td colspan="3"
         p= "\"#{feeling.mood}\""
-        = "-#{feeling.date}"
+        = "-#{feeling.created_at.strftime('%b %e, %Y')}"
     tr
       td
         i.fas.fa-mug-hot
