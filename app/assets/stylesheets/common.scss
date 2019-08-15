@@ -15,3 +15,10 @@ a {
   color:  $trolley-grey;
 
 }
+
+
+input:-internal-autofill-selected {
+    background-color: rgba(232, 240, 254,0) !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
