@@ -1,0 +1,13 @@
+@import "variable/color";
+
+.btn {
+  background-color: white;
+  color:  $trolley-grey;
+  border: dotted 1px $trolley-grey !important;
+
+  &:hover {
+    background-color: $trolley-grey;
+    color: white;
+  }
+
+}

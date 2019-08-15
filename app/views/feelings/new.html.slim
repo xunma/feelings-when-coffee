@@ -1,47 +1,42 @@
-h2= "You have arrived at the creating feeling page. Help yourself. If you have any question, don't ask Amy."
-.card-box.form
+/ - require 'datetime'
+h2= "This is where you create feeling. Help yourself. If you have any question, don't ask Amy."
+.form
   = form_for @feeling do |f|
-    table
-      tr
-        td
-          / = f.label :mood
-          = f.text_field :mood, placeholder: "So, what is this moment like?"
-      tr
-        td
-          / = f.label :drink
-          = f.text_field :drink, placeholder: "what are you drinking #{current_user.username}?"
-      tr
-        td
-          / i.fas.fa-music
-          / = f.label :music
-          = f.text_field :music, placeholder: "what music?"
-      tr
-        td
-          / i.fas.fa-store-alt
-          / = f.label :coffee_shop
-          = f.text_field :coffee_shop, placeholder: "what is this place called again?"
-      tr
-        td
-          / i.fas.fa-wifi
-          / = f.label :wifi_password
-          = f.text_field :wifi_password, placeholder: "do they have interesting password?"
-    = f.submit "click here to create this piece of feeling⭐️"
+    .form-row
+      .form-label
+        = f.label "Feeling"
+      em A piece of feeling is incomplete without feeling. You can leave other things blank, not this one.
+      .form-input
+        = f.text_field :mood, placeholder: "So, what does this moment feel like?"
 
+    .form-row
+      .form-label
+        = f.label "Drink"
+      .form-input
+        = f.text_field :drink, placeholder: "What are you drinking #{current_user.username}?"
 
-  / = f.label :mood
-  / = f.text_field :mood
+    .form-row
+      .form-label
+        = f.label "Music"
+      .form-input
+        = f.text_field :music, placeholder: "In the speaker or in your earpods"
 
-  / = f.label :coffee_shop
-  / = f.text_field :coffee_shop
+    .form-row
+      .form-label
+        = f.label "Coffee Shop"
+      .form-input
+        = f.text_field :coffee_shop, placeholder: "Where are you having this cup of drink?"
 
-  / = f.label :music
-  / = f.text_field :music
+    .form-row
+      .form-label
+        = f.label "Wifi Password"
+      .form-input
+        = f.text_field :wifi_password, placeholder: "Do they have interesting password?"
 
-  / = f.label :wifi_password
-  / = f.text_field :wifi_password
+    .form-row
+      .form-label
+        = f.label "Date"
+      .form-input
+        = f.text_field :date, placeholder: "Any poetic way to call this day other than #{DateTime.now.strftime('%b %e, %Y')}"
 
-  / = f.label :drink
-  / = f.text_field :drink
-
-  / = f.label :date
-  / = f.text_field :date
+    = f.submit "I feel it", class: "btn"
