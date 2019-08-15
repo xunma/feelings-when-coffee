@@ -1,0 +1,44 @@
+h2 Sign up to be a feeler
+.form
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+
+    .form-row
+      .form-label
+        = f.label :email
+      .form-input
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+
+    .form-row
+      .form-label
+        = f.label :username
+      em username cannot be something other people already used(not that there are that many users here...)
+      br
+      em just note that this form does not validate the username before you click the sign up button
+      br
+      em so if you pick sth others already picked you'll have to fill in the form again
+      br
+      em my bad, i'll add validation laterr
+      .form-input
+        = f.text_field :username, autofocus: true
+
+    .form-row
+      .form-label
+        = f.label :password
+      - if @minimum_password_length
+        em= "(#{@minimum_password_length} characters minimum)"
+      .form-input
+        = f.password_field :password, autocomplete: "new-password"
+
+
+    .form-row
+      .form-label
+        = f.label :password_confirmation
+      .form-input
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+
+    = f.submit "Sign up", class: "btn"
+
+= link_to "Already have an account? Log in ->", new_session_path(resource_name)
+
+/= render "users/shared/links"

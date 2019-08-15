@@ -1,9 +1,14 @@
 @import "variable/color";
 
 .btn {
+  -webkit-appearance: none;
   background-color: white;
   color:  $trolley-grey;
   border: dotted 1px $trolley-grey !important;
+  width: 323px;
+  height: 30px;
+  text-align: center;
+
 
   &:hover {
     background-color: $trolley-grey;
@@ -11,3 +16,4 @@
   }
 
 }
+
