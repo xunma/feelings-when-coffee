@@ -1,24 +1,87 @@
-- space = "  "
+- feeling_arr = [feeling.drink_html, feeling.music_html, feeling.coffee_shop_html, feeling.wifi_password_html].compact
+- count = feeling_arr.count
+
+- if count == 0
+  - rowspan = 1
+- elsif count <= 2
+  - rowspan = 2
+- else
+  -rowspan = 3
+
 .card-box
   table
     tr
-      td.long-column rowspan="3"
+      td.long-column rowspan="#{rowspan}"
         .vertical-text
           h2= feeling.user.username
-      td colspan="3"
+      td colspan="2"
         p= "\"#{feeling.mood}\""
-        = "-#{feeling.created_at.strftime('%b %e, %Y')}"
-    tr
-      td
-        i.fas.fa-mug-hot
-        = space + feeling.drink
-      td
-        i.fas.fa-music
-        = space + feeling.music
-    tr
-      td
-        i.fas.fa-store-alt
-        = space + feeling.coffee_shop
-      td
-        i.fas.fa-wifi
-        = space + feeling.wifi_password
+        - if feeling.date&.empty?
+          = "-#{feeling.created_at.strftime('%b %e, %Y')}"
+        - else
+          = "-#{feeling.date}"
+
+    - if count == 1
+        tr
+          td colspan="2"
+            = feeling_arr[0].html_safe
+    - elsif count == 2
+      tr
+        td
+          = feeling_arr[0].html_safe
+        td
+          = feeling_arr[1].html_safe
+    - elsif count == 3
+      tr
+        td
+          = feeling_arr[0].html_safe
+        td
+          = feeling_arr[1].html_safe
+      tr
+        td colspan="2"
+          = feeling_arr[2].html_safe
+    - elsif count == 4
+      tr
+        td
+          = feeling_arr[0].html_safe
+        td
+          = feeling_arr[1].html_safe
+      tr
+        td
+          = feeling_arr[2].html_safe
+        td
+          = feeling_arr[3].html_safe
+
+
+
+    / tr
+    /   td
+    /     = feeling.drink_html&.html_safe
+    /   td
+    /     = feeling.music_html&.html_safe
+    / tr
+    /   td
+    /     = feeling.coffee_shop_html&.html_safe
+    /   td
+    /     = feeling.wifi_password_html&.html_safe
+
+
+    / - i = 1
+    / - total = feeling_hash.count
+    / - feeling_hash.each do |k,v|
+    /   - if total == 1 && i % 0 == 1
+    /     tr
+    /       td colspan="2"
+    /         = space + v
+    /   - elsif total == 4
+
+    /     - if total - i == 1
+    /     - elsif i == 2
+    /       td
+    /         = space + v
+
+    /     - elsif i == 3
+    /         tr
+    /           td
+    /             = space + v
+
