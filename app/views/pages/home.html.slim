@@ -1,4 +1,8 @@
-p this is home of feelings when coffee
+h2 this is the homepage of feelings when coffee
+h2 it's for sharing the feelings you have when sitting at a coffee house
+h2 make yourself comfortable here
 - unless current_user
-  = link_to "click here to sign in", new_user_session_path
-  = link_to "OR click here to sign up", new_user_registration_path
+  div
+    = link_to "sign in", new_user_session_path
+  div
+    = link_to "OR sign up", new_user_registration_path
