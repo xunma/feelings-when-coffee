@@ -16,10 +16,10 @@
           h2= feeling.user.username
       td colspan="2"
         p= "\"#{feeling.mood}\""
-        - if feeling.date&.empty?
-          = "-#{feeling.created_at}"
-        - else
-          = "-#{feeling.date}"
+        / - if feeling.date&.empty?
+        = "-#{feeling.created_at.strftime('%b %e, %Y')}"
+        / - else
+        /   = "-#{feeling.date}"
 
     - if count == 1
         tr
