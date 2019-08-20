@@ -1,21 +1,96 @@
 @import "./variable/color";
 
+$card-height: 250px;
+
+.card-container {
+  min-height: $card-height;
+  position: relative;
+  margin-bottom: 20px;
+  .date {
+    text-align: end;
+    margin-right: 10px;
+  }
+}
+
+.left-full {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  left: 0;
+  top:0;
+  background: $black;
+  color: $egg;
+
+
+  .item-bottom {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    font-size: 12px;
+  }
+}
+
+.right-top {
+  position: absolute;
+  width: 80%;
+  min-height: 60%;
+  right:0;
+  top: 0;
+  border-top: 4px solid $black;
+  p {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.right-bottom {
+  position: absolute;
+  width: 80%;
+  height: auto;
+  right:0;
+  bottom: 0;
+  border-bottom: 4px solid $black;
+  border-top: 4px dotted $black;
+
+  .card-detail{
+    margin: 5px 10px;
+  }
+
+}
+
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  margin-top: 10px;
 }
 
+.shadow {
+  position: absolute;
+  width: 90%;
+  height: 6px;
+  bottom: -5px;
+  background-color: $grey;
+  border-radius: 20px;
+  right: 9px;
+  z-index: -1;
+}
+
+
+
+//no use
 .card-box table {
   background-color: white;
-  margin: 20px 0px;
+  // margin: 20px 0px;
   width: 100%;
-  min-height: 250px;
+  min-height: $card-height;
   border-collapse: collapse;
   text-align: center;
-  // background-color: #F8F6F4;
+  background-color: $egg;
 
   td {
-    border: 1px dotted $trolley-grey;
+    border: 4px solid $black;
+    border-radius: 2px;
   }
 
   i {
@@ -34,3 +109,6 @@
   }
 }
 
+table :first-child {
+  border-top: none;
+}

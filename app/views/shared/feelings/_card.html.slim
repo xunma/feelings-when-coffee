@@ -1,57 +1,89 @@
 - feeling_arr = [feeling.drink_html, feeling.music_html, feeling.coffee_shop_html, feeling.wifi_password_html].compact
 - count = feeling_arr.count
+.card-container
+  .left-full
+    h2.vertical-text= "@" + feeling.user.username
+    .item-bottom
+      = feeling.time_created
+  .right-top
+    p= "\"#{feeling.mood}\""
+    - if feeling.date.present?
+      .date= "-#{feeling.date}"
+  .right-bottom
+    - feeling_arr.each do |e|
+      .card-detail
+        = e.html_safe
+  .shadow
+    / =feeling_arr[0].html_safe
+    / =feeling_arr[1].html_safe
+    / =feeling_arr[2].html_safe
+    / =feeling_arr[0].html_safe
 
-- if count == 0
-  - rowspan = 1
-- elsif count <= 2
-  - rowspan = 2
-- else
-  -rowspan = 3
 
-.card-box
-  table
-    tr
-      td.long-column rowspan="#{rowspan}"
-        h2.vertical-text= feeling.user.username
-      td colspan="2"
-        p= "\"#{feeling.mood}\""
-        - if feeling.date.nil?
-          = "-#{feeling.created_at.strftime('%b %e, %Y')}"
-        - elsif feeling.date.empty?
-          = "-#{feeling.created_at.strftime('%b %e, %Y')}"
-        - else
-          = "-#{feeling.date}"
 
-    - if count == 1
-        tr
-          td colspan="2"
-            = feeling_arr[0].html_safe
-    - elsif count == 2
-      tr
-        td
-          = feeling_arr[0].html_safe
-        td
-          = feeling_arr[1].html_safe
-    - elsif count == 3
-      tr
-        td
-          = feeling_arr[0].html_safe
-        td
-          = feeling_arr[1].html_safe
-      tr
-        td colspan="2"
-          = feeling_arr[2].html_safe
-    - elsif count == 4
-      tr
-        td
-          = feeling_arr[0].html_safe
-        td
-          = feeling_arr[1].html_safe
-      tr
-        td
-          = feeling_arr[2].html_safe
-        td
-          = feeling_arr[3].html_safe
+
+
+
+
+
+
+
+
+
+
+
+
+/ - if count == 0
+/   - rowspan = 1
+/ - elsif count <= 2
+/   - rowspan = 2
+/ - else
+/   -rowspan = 3
+
+/ .card-box
+/   table
+/     tr
+/       td.long-column rowspan="#{rowspan}"
+/         h2.vertical-text= feeling.user.username
+/       td colspan="2"
+/         p= "\"#{feeling.mood}\""
+/         - if feeling.date.nil?
+/           = "-#{feeling.created_at.strftime('%b %e, %Y')}"
+/         - elsif feeling.date.empty?
+/           = "-#{feeling.created_at.strftime('%b %e, %Y')}"
+/         - else
+/           = "-#{feeling.date}"
+
+/     - if count == 1
+/         tr
+/           td colspan="2"
+/             = feeling_arr[0].html_safe
+/     - elsif count == 2
+/       tr
+/         td
+/           = feeling_arr[0].html_safe
+/         td
+/           = feeling_arr[1].html_safe
+/     - elsif count == 3
+/       tr
+/         td
+/           = feeling_arr[0].html_safe
+/         td
+/           = feeling_arr[1].html_safe
+/       tr
+/         td colspan="2"
+/           = feeling_arr[2].html_safe
+/     - elsif count == 4
+/       tr
+/         td
+/           = feeling_arr[0].html_safe
+/         td
+/           = feeling_arr[1].html_safe
+/       tr
+/         td
+/           = feeling_arr[2].html_safe
+/         td
+/           = feeling_arr[3].html_safe
 
 
 

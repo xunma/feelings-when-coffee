@@ -19,7 +19,15 @@ class Feeling < ApplicationRecord
     end
   end
 
-  # def #{}_html
-  #   self.drink
-  # end
+  def time_created
+    diff = (Time.now - self.created_at) / 3600
+    if diff > 24
+      self.created_at.strftime('%b %e, %Y')
+    elsif diff < 1
+     "#{ (diff * 60).floor} mins ago"
+    else
+      "#{diff.floor} hours ago"
+    end
+
+  end
 end
