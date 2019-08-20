@@ -1,15 +1,24 @@
-.navbar-container
-  .logo
-    h3 feelingswhencoffee.
-  - if current_user
+.blue-border-box
+  .navbar-container
+    .logo feelingswhencoffee.
+    .navbar-right
+      - if current_user
+        .button.half-round.egg
+          = link_to "create", new_feeling_path
+        .button.half-round
+          = link_to "sign out", destroy_user_session_path, method: :delete
+      - else
+        .button.half-round
+          = link_to "Sign in", new_user_session_path
+        .button.half-round.egg
+          = link_to "Sign up", new_user_registration_path
 
-    .navbar-links
+
+    /.navbar-links
       .link
         = link_to "browse", feelings_path
       .link
-        = link_to "create", new_feeling_path
       .link
-        / = link_to "sign out", destroy_user_session_path, method: :delete
         = link_to "@#{current_user.username}"
         / dropdown
   / - else
