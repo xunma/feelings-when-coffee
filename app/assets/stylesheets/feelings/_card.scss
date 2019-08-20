@@ -77,6 +77,12 @@ $card-height: 250px;
 }
 
 
+@media screen and (min-width: 500px) {
+  .card-container {
+    border-right: 4px solid $black;
+  }
+}
+
 
 //no use
 .card-box table {
