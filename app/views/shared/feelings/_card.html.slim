@@ -17,13 +17,22 @@
 .comment-form-box
   .comment-line
   = form_for comment, url: comments_path, html: { method: :post } do |f|
-    = f.text_field :content, placeholder: "Comment...", class: "comment-bubble-dashed"
+    = f.text_field :content, placeholder: "Comment...", class: "comment-bubble-dashed", default: nil
     = f.hidden_field :feeling_id, value: feeling.id
-    = f.submit "post", class: "comment-button button half-round egg"
-
-
-
-
+    = f.submit "post", class: "comment-button"
+    / button half-round egg"
+.comments-container
+  .comment-line-solid
+  - feeling.comments.each do |comment|
+    .comment-unit
+      .comment-author= comment.user.username
+      .comment-content= comment.content
+  / .comment-unit
+  /   .comment-author rita
+  /   .comment-content @amy I like it
+  / .comment-unit
+  /   .comment-author rachel
+  /   .comment-content @amy fine what the fuck is happening here I don't understand
 
 
 
