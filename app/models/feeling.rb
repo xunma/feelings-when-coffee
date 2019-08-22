@@ -2,6 +2,7 @@
 
 class Feeling < ApplicationRecord
   belongs_to :user
+  has_many :comments
 
   DETAILS = [ 'drink', 'music', 'wifi_password', 'coffee_shop']
   DETAILS.each do |detail|

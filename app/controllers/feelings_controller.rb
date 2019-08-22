@@ -5,6 +5,7 @@ class FeelingsController < ApplicationController
 
   def index
     @feelings = Feeling.all
+    @comment = Comment.new
   end
 
   def new

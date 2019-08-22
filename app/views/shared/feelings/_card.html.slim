@@ -16,8 +16,10 @@
   .shadow
 .comment-form-box
   .comment-line
-  .comment-bubble-dashed
-  .comment-button.button.half-round.egg post
+  = form_for comment, url: comments_path, html: { method: :post } do |f|
+    = f.text_field :content, placeholder: "Comment...", class: "comment-bubble-dashed"
+    = f.hidden_field :feeling_id, value: feeling.id
+    = f.submit "post", class: "comment-button button half-round egg"
 
 
 
