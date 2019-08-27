@@ -1,9 +1,9 @@
 @import "./variable/color";
 
-.blue-border-box {
+.border-box {
   border-bottom: 4px solid $black;
-  background-color: $blue;
 }
+
 
 .navbar-container {
   display: flex;

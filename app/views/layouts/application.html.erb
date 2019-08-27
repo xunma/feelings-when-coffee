@@ -15,7 +15,8 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <% theme_color = current_user ? current_user.theme_color : "#C8EAE8" %>
+    <%= render "shared/navbar", theme_color: theme_color%>
     <div class="container">
       <%= yield %>
     </div>
