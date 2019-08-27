@@ -20,7 +20,7 @@ class Feeling < ApplicationRecord
     end
   end
 
-  def time_created
+  def display_time
     diff = (Time.now - self.created_at) / 60
     if diff > 1440
       self.created_at.strftime('%b %e, %Y')
