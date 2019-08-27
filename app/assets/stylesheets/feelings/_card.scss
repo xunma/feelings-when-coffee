@@ -154,8 +154,20 @@ $card-height: 250px;
 
 .comment-unit {
   margin-left: 60px;
+  font-size: 12px;
+
+  .comment-row {
+    display: block;
+    display: flex;
+    align-items: center;
+  }
   .comment-author {
     font-weight: 700;
+  }
+  .comment-date {
+    color: $grey;
+    font-size: 8px;
+    margin-left:10px;
   }
   .comment-content {
 
@@ -173,38 +185,3 @@ $card-height: 250px;
 
 
 
-
-//no use
-.card-box table {
-  background-color: white;
-  // margin: 20px 0px;
-  width: 100%;
-  min-height: $card-height;
-  border-collapse: collapse;
-  text-align: center;
-  background-color: $egg;
-
-  td {
-    border: 4px solid $black;
-    border-radius: 2px;
-  }
-
-  i {
-    font-size: 0.7em;
-  }
-}
-
-.long-column{
-  width: 15%;
-}
-
-.card-box {
-  p {
-    font-weight: 700;
-    font-size: 20px;
-  }
-}
-
-table :first-child {
-  border-top: none;
-}
