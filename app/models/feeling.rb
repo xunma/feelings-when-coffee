@@ -20,20 +20,4 @@ class Feeling < ApplicationRecord
     end
   end
 
-  def display_time
-    diff = (Time.now - self.created_at) / 60
-    if diff > 1440
-      self.created_at.strftime('%b %e, %Y')
-    elsif diff < 1
-      "Just now"
-    elsif diff < 2
-     "1 min ago"
-    elsif diff < 60
-     "#{diff.floor} mins ago"
-    elsif diff < 120
-     "1 hour ago"
-    else
-      "#{(diff / 60).floor} hours ago"
-    end
-  end
 end

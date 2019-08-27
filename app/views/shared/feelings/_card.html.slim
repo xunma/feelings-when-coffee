@@ -4,7 +4,7 @@
   .left-full
     h2.vertical-text= "@" + feeling.user.username
     .item-bottom
-      = feeling.display_time
+      = display_time(feeling.created_at)
   .right-top
     p= "\"#{feeling.mood}\""
     - if feeling.date.present?
