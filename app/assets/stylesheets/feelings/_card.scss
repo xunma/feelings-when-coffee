@@ -127,6 +127,7 @@ $card-height: 250px;
   background-color: $egg;
   height: 34px;
   width: 10%;
+  -webkit-appearance: none;
   &:hover {
     color: $egg;
     background-color: $black;
