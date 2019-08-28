@@ -1,8 +1,11 @@
-h2 this is the homepage of feelings when coffee
-h2 it's for sharing the feelings you have when sitting at a coffee house
-h2 make yourself comfortable here
-- unless current_user
-  div
-    = link_to "sign in", new_user_session_path
-  div
-    = link_to "OR sign up", new_user_registration_path
+/ h2 Hey, welcome to feelings when coffee(verb).
+.home-container
+  .mgt50
+  h1 Start your coffee log, from here.
+  h2 Log your drink, mood, music, wifi password etc. and share with other coffee loggers
+  - unless current_user
+    .button.half-round
+      = link_to "sign in", new_user_session_path
+    .mgt30
+    .button.half-round.blue
+      = link_to "sign up", new_user_registration_path

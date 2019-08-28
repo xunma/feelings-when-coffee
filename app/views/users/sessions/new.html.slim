@@ -1,26 +1,27 @@
-h2 Log feeling now
-.form
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .form-row
-      .form-label
-        = f.label :email
-      .form-input
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-    .form-row
-      .form-label
-        = f.label :password
-      .form-input
-        = f.password_field :password, autocomplete: "current-password"
+.home-container
+  h2 Log in to log
+  .form
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-row
+        .form-label
+          = f.label :email
+        .form-input
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .form-row
+        .form-label
+          = f.label :password
+        .form-input
+          = f.password_field :password, autocomplete: "current-password"
 
-    .form-row
-      - if devise_mapping.rememberable?
-        .checkbox
-          = f.check_box :remember_me, value: 1
-          = f.label :remember_me
-
-
-    = f.submit "Log in", class: 'btn'
+      .form-row
+        - if devise_mapping.rememberable?
+          .checkbox
+            = f.check_box :remember_me, value: 1
+            = f.label :remember_me
 
 
+      = f.submit "Log in", class: 'btn'
 
-= render "users/shared/links"
+
+
+  = render "users/shared/links"

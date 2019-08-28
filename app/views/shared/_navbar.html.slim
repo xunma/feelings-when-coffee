@@ -8,12 +8,12 @@
           = link_to "create", new_feeling_path
         .button.half-round
           = link_to "browse", feelings_path
-          / = link_to "sign out", destroy_user_session_path, method: :delete
-      - else
-        .button.half-round
-          = link_to "Sign in", new_user_session_path
-        .button.half-round.egg
-          = link_to "Sign up", new_user_registration_path
+          = link_to "sign out", destroy_user_session_path, method: :delete
+      / - else
+      /   .button.half-round
+      /     = link_to "Sign in", new_user_session_path
+      /   .button.half-round.egg
+      /     = link_to "Sign up", new_user_registration_path
 
 
     /.navbar-links
