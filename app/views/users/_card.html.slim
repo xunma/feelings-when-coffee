@@ -1,0 +1,25 @@
+- feeling_arr = [feeling.drink_html, feeling.music_html, feeling.coffee_shop_html, feeling.wifi_password_html].compact
+- count = feeling_arr.count
+.card-container
+  .left-full
+    h2.vertical-text= "@" + feeling.user.username
+    .item-bottom
+      = display_time(feeling.created_at)
+  .right-top
+    p= "\"#{feeling.mood}\""
+    - if feeling.date.present?
+      .date= "-#{feeling.date}"
+  .right-bottom
+    - feeling_arr.each do |e|
+      .card-detail
+        = e.html_safe
+  .shadow
+.mgt30
+.comments-container
+  .comment-line-solid
+  - feeling.comments.each do |comment|
+    .comment-unit
+      .comment-row
+        .comment-author= comment.user.username
+        .comment-date= display_time(comment.created_at)
+      .comment-content= comment.content

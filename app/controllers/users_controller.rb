@@ -3,8 +3,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
-    @owner = find_user
-    @feelings = @owner.feelings
+    if @owner == current_user
+      @owner = find_user
+      @feelings = @owner.feelings
+    else
+      redirect_to feelings_path
+    end
   end
 
   private

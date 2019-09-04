@@ -1,1 +1,4 @@
-= render 'feelings', feelings: @feelings
+.cards-container
+  - @feelings.reverse.each do |feeling|
+    = render 'card', feeling: feeling
+
