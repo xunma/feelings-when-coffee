@@ -14,6 +14,8 @@
       .card-detail
         = e.html_safe
   .shadow
+  .like-item id="#{feeling.id}-feeling"
+    = render "././likes/like_button", feeling: feeling
 .comment-form-box
   .comment-line
   = form_for comment, url: comments_path, html: { method: :post } do |f|
@@ -29,9 +31,6 @@
         .comment-author= comment.user.username
         .comment-date= display_time(comment.created_at)
       .comment-content= comment.content
-
-
-
 
 
 
