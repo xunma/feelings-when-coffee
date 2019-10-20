@@ -3,4 +3,4 @@
 
 .cards-container
   - @feelings.reverse.each do |feeling|
-    = render './shared/feelings/card', feeling: feeling, comment: @comment
+    = render './shared/feelings/card', feeling: feeling, comment: @comment, like: @like

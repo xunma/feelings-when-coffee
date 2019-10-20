@@ -1,4 +1,4 @@
-// var heart = document.getElementById(`<%= @feeling.id %>-feeling`);
-// var link = '<%= j render "like_button", feeling: @feeling %>';
+var heart = document.getElementById(<%= @feeling.id %> + "-feeling");
+var link = '<%= j render "like_button", feeling: @feeling %>';
 
-// heart.innerHTML = link;
+heart.innerHTML = link;

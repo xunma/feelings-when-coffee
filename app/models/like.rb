@@ -5,4 +5,8 @@ class Like < ApplicationRecord
   def self.liked?(user, feeling)
    Like.where(user: user, feeling: feeling).any?
   end
+
+  def self.set_like(user, feeling)
+    Like.where(user: user, feeling: feeling).first
+  end
 end

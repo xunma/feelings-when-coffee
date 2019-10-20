@@ -16,6 +16,7 @@
   .shadow
   .like-item id="#{feeling.id}-feeling"
     = render "././likes/like_button", feeling: feeling
+
 .comment-form-box
   .comment-line
   = form_for comment, url: comments_path, html: { method: :post } do |f|
