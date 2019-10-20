@@ -1,7 +1,11 @@
 - like = Like.where(user_id: current_user.id, feeling_id: feeling.id).first
+- like_num = feeling.likes.count
+- like_num = like_num > 0 ? like_num : nil
 - if like.nil?
   = link_to likes_path(feeling_id: feeling.id), method: :post, remote: true do
     i.far.fa-heart
 - else
   = link_to like_path(like), method: :delete, remote: true do
     i.fas.fa-heart
+- if like_num
+  .text-small= "#{pluralize(like_num, "like")}"
