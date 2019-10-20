@@ -9,7 +9,6 @@ class LikesController < ApplicationController
       if @like.save
         @feeling = Feeling.find(feeling_id)
         format.js { render 'likes/like.js.erb', feeling: @feeling }
-        # format.html { redirect_to feelings_path }
       else
         byebug
       end
