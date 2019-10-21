@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :feelings
+  has_many :likes, through: :feelings
 
   def theme_color
     if self.color == "blue"
