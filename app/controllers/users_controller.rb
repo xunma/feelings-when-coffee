@@ -2,18 +2,24 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_user, only: [:show, :update]
+
   def show
-    @owner = find_user
-    if @owner == current_user
-      @feelings = @owner.feelings
+    if @user == current_user
+      @feelings = @user.feelings
     else
       redirect_to feelings_path
     end
   end
 
+  def update
+    @user.color = params[:color]
+    @user.save
+  end
+
   private
 
   def find_user
-    User.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username])
   end
 end

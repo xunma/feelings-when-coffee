@@ -5,9 +5,11 @@
     .navbar-right
       - if current_user
         .button.half-round.egg
-          = link_to "create", new_feeling_path
-        .button.half-round
-          = link_to "browse", feelings_path
+          = link_to "💭", new_feeling_path
+        .button.half-round.egg
+          = link_to "👯‍♀️", feelings_path
+        .username-link
+          = link_to "@#{current_user.username}", user_path(current_user.username)
 
 
 

@@ -1,4 +1,21 @@
-.cards-container
-  - @feelings.reverse.each do |feeling|
-    = render 'card', feeling: feeling
+/ h1= @user.username
+// username
+// number of days joined
+// number of posts
+
+.user-show-container
+  h1= "@#{@user.username}"
+  p= "🗓 Been here for #{((Time.new - @user.created_at)/86400).floor} days"
+  p= "💭 #{@user.feelings.count} feelings in total"
+  p= "☕✨Keep drinking!"
+  label.switch
+    input type="checkbox" id="theme-color-checkbox" data-color="#{theme_color}" data-user="#{@user.username}"
+    span.slider
+  = javascript_pack_tag 'theme_color'
+
+
+/ = link_to "Change Password", edit_user_password_path(@owner)
+/ .cards-container
+/   - @feelings.reverse.each do |feeling|
+/     = render 'card', feeling: feeling
 
