@@ -5,7 +5,7 @@
     = form_for @feeling do |f|
       .form-row
         .form-label
-          = f.label "💭✨ Feeling"
+          = f.label "💭 Feeling"
         em A piece of feeling is incomplete without feeling. You can leave other things blank, not this one.
         .form-input
           = f.text_field :mood, placeholder: "So, what does this moment feel like?"
@@ -40,4 +40,4 @@
         .form-input
           = f.text_field :date, placeholder: "Any poetic way to call this day other than #{DateTime.now.strftime('%b %e, %Y')}"
 
-      = f.submit "Post", class: "btn"
+      = f.submit "✨ Post", class: "btn"
