@@ -50,6 +50,11 @@
   }
 }
 
+.username-link{
+  padding-top: 15px;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 500px) {
   .navbar-right {
     min-width: 50%;

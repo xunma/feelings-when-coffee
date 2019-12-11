@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :feelings, only: [:index, :new, :create]
 
-  resources :users, only: :show, param: :username
+  resources :users, only: [:show, :update], param: :username
 
   resources :comments, only: [:create]
 
