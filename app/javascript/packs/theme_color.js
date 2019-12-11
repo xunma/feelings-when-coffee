@@ -42,5 +42,3 @@ checkbox.addEventListener('change', changeColor);
 //   });
 // }
 
-
-//ok I think I will let it be. There is not much thing I can do
